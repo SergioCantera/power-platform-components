@@ -1,0 +1,105 @@
+---
+import {
+  floatingFilledLabel,
+  floatingOutlinedLabel,
+  importCode,
+} from "@data/input.ts";
+
+import FlaotingFilledLabel from "@components/inputs/FloatingFilledLabel.astro";
+import FlaotingOutlinedLabel from "@components/inputs/FloatingOutlinedLabel.astro";
+import Article from "@components/Article.astro";
+import CodeBlock from "@components/CodeBlock.astro";
+import Content from "@layouts/Content.astro";
+import Header from "@components/Header.astro";
+import Heading from "@components/Heading.astro";
+import Layout from "@layouts/Layout.astro";
+import List from "@components/List.astro";
+import ListItem from "@components/ListItem.astro";
+import Preview from "@components/Preview.astro";
+import Prose from "@components/Prose.astro";
+import Sidebar from "@layouts/Sidebar.astro";
+import Text from "@components/Text.astro";
+import Tab from "@components/Tab.astro";
+import TabItem from "@components/TabItem.astro";
+---
+
+<Layout title="Power Pages Components - Input">
+  <Header />
+  <Sidebar />
+  <Content>
+    <section>
+      <Article>
+        <Heading
+          slot="header"
+          level={1}
+          gradient
+          class="inline-block"
+          text="Input"
+        />
+        <Prose>
+          <Text>
+            Use these responsive card components to show data entries and
+            information to your users in multiple forms and contexts such as for
+            your blog, application, user profiles, and more.
+          </Text>
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Import" />
+          <Text>
+            To use the Card component, first import it into your project:
+          </Text>
+          <CodeBlock lang="astro" code={importCode} />
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Usage" />
+          <Text>
+            You can use the following example of a card element with an image
+            for blog posts, user cards, and many more.
+          </Text>
+          <Heading level={3} text="Basic Usage" />
+          <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
+            <TabItem active>
+              <Preview>
+                <FlaotingFilledLabel />
+              </Preview>
+            </TabItem>
+            <TabItem>
+              <CodeBlock lang="html" code={floatingFilledLabel} />
+            </TabItem>
+          </Tab>
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Usage" />
+          <Text>
+            You can use the following example of a card element with an image
+            for blog posts, user cards, and many more.
+          </Text>
+          <Heading level={3} text="Basic Usage" />
+          <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
+            <TabItem active>
+              <Preview>
+                <FlaotingOutlinedLabel />
+              </Preview>
+            </TabItem>
+            <TabItem>
+              <CodeBlock lang="html" code={floatingOutlinedLabel} />
+            </TabItem>
+          </Tab>
+        </Prose>
+      </Article>
+    </section>
+  </Content>
+
+  <style>
+    .custom-button {
+      --ac-btn-border-radius: 999px;
+      --ac-btn-font-weight: 600;
+      border-width: 0;
+      background-image: linear-gradient(
+        90deg,
+        rgb(var(--ac-primary)) 0%,
+        rgb(var(--ac-secondary)) 100%
+      );
+    }
+  </style>
+</Layout>

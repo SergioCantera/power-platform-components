@@ -1,0 +1,138 @@
+---
+import {
+  basicUsageCode,
+  customVariablesCode,
+  variantLightCode,
+  variantShadowCode,
+  variantBorderedCode,
+  variantSplittedCode,
+  openCode,
+  interactionCode,
+  importCode,
+  tableHead,
+  tableRows,
+  tableItemRows,
+} from "@data/carousel.ts";
+/*import {
+  Accordion as AccordionAc,
+  Tab,
+  TabItem,
+  AccordionItem,
+} from "free-astro-components";*/
+import IndicatorCarousel from "@components/carousels/IndicatorCarousel.astro";
+import Article from "@components/Article.astro";
+import CodeBlock from "@components/CodeBlock.astro";
+import Content from "@layouts/Content.astro";
+import Header from "@components/Header.astro";
+import Heading from "@components/Heading.astro";
+import Layout from "@layouts/Layout.astro";
+import List from "@components/List.astro";
+import ListItem from "@components/ListItem.astro";
+import Preview from "@components/Preview.astro";
+import Prose from "@components/Prose.astro";
+import Sidebar from "@layouts/Sidebar.astro";
+import Text from "@components/Text.astro";
+import Tab from "@components/Tab.astro";
+import TabItem from "@components/TabItem.astro";
+import Table from "@components/Table.astro";
+---
+
+<Layout title="Power Pages Components - Carousel">
+  <Header />
+  <Sidebar />
+  <Content>
+    <section>
+      <Article>
+        <Heading
+          slot="header"
+          level={1}
+          gradient
+          class="inline-block"
+          text="Carousel"
+        />
+        <Prose>
+          <Text>
+            Use the carousel component to slide through multiple elements and
+            images using custom controls, indicators, intervals, and options.
+          </Text>
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Import" />
+          <Text>
+            The carousel component can be used to cycle through a set of
+            elements using custom options, controls, and indicators based on the
+            JavaScript object from Flowbite:
+          </Text>
+          <CodeBlock lang="astro" code={importCode} />
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Usage" />
+          <Text>
+            The Accordion component consists of an Accordion container and
+            AccordionItem children. The AccordionItem component is used to
+            define each expandable content item within the Accordion container.
+          </Text>
+          <Heading level={3} text="Basic Usage" />
+          <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
+            <TabItem active>
+              <Preview>
+                <IndicatorCarousel />
+              </Preview>
+            </TabItem>
+            <TabItem>
+              <CodeBlock lang="html" code={basicUsageCode} />
+            </TabItem>
+          </Tab>
+
+          <Prose>
+            <Heading level={2} text="Accessibility" />
+            <List>
+              <ListItem>
+                <Text>
+                  <strong>Keyboard Navigation</strong>: Ensure that users can
+                  navigate the accordion using the keyboard. The <code
+                    >summary</code
+                  > element should be focusable, and pressing the <code
+                    >Enter</code
+                  > or <code>Space</code> key should toggle the expanded state of
+                  the
+                  <code>AccordionItem</code>.
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text>
+                  <strong>Focus Management</strong>: When an accordion item is
+                  expanded, focus should be managed to ensure that the content
+                  inside the <code>AccordionItem</code> is accessible. Ensure that
+                  tabbing through the accordion leads to expected behavior.
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text>
+                  <strong>Semantic HTML</strong>: The use of <code>details</code
+                  >
+                  and <code>summary</code>
+                  elements provides inherent accessibility benefits, as these elements
+                  are recognized by screen readers and provide the expected behavior.
+                </Text>
+              </ListItem>
+            </List>
+          </Prose>
+        </Prose>
+      </Article>
+    </section>
+  </Content>
+
+  <style>
+    .custom-button {
+      --ac-btn-border-radius: 999px;
+      --ac-btn-font-weight: 600;
+      border-width: 0;
+      background-image: linear-gradient(
+        90deg,
+        rgb(var(--ac-primary)) 0%,
+        rgb(var(--ac-secondary)) 100%
+      );
+    }
+  </style>
+</Layout>

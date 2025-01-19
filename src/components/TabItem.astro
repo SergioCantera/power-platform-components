@@ -1,0 +1,28 @@
+---
+interface Props {
+  active?: boolean;
+  children: any;
+  class?: string;
+}
+
+const { active, class: className } = Astro.props;
+---
+
+<div
+  data-tab-pane
+  aria-hidden={active ? "false" : "true"}
+  role="tabpanel"
+  class:list={["ac-tab-pane", className]}
+>
+  <slot />
+</div>
+
+<style>
+  .ac-tab-pane {
+    display: none;
+
+    &[aria-hidden="false"] {
+      display: block;
+    }
+  }
+</style>

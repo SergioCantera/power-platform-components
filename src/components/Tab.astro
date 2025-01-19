@@ -1,0 +1,100 @@
+---
+import "@css/main.css";
+export type TabItem = typeof import("@components/TabItem.astro").default;
+
+interface Props {
+  tabs?: { label: string; active?: boolean }[];
+  children: TabItem | TabItem[];
+  class?: string;
+}
+
+const {
+  tabs = [{ label: "tab 1", active: true }, { label: "tab 1" }],
+  class: className,
+} = Astro.props;
+---
+
+<div data-tab class:list={["ac-tab", className]}>
+  <ul data-tab-header role="tablist" class="ac-tab-header">
+    {
+      tabs.map((tab) => (
+        <li>
+          <button
+            class="ac-tab-button"
+            role="tab"
+            data-tab-button
+            aria-selected={tab.active}
+          >
+            {tab.label}
+          </button>
+        </li>
+      ))
+    }
+  </ul>
+  <div data-tab-body>
+    <slot />
+  </div>
+</div>
+
+<style>
+  .ac-tab {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ac-spacing-4);
+  }
+
+  .ac-tab-header {
+    align-items: center;
+    box-shadow: inset 0 -2px 0 0 rgb(var(--ac-color-200));
+    display: flex;
+    justify-content: start;
+    list-style: none;
+    margin: 0;
+    overflow-x: auto;
+    padding: 0;
+    width: 100%;
+  }
+
+  .ac-tab-button {
+    align-items: center;
+    appearance: none;
+    background-color: var(--ac-transparent);
+    border-bottom-width: var(--ac-border-2);
+    border-color: var(--ac-transparent);
+    color: rgb(var(--ac-color-500));
+    cursor: pointer;
+    display: flex;
+    font-family: var(--ac-font-sans);
+    font-size: var(--ac-text-sm);
+    gap: var(--ac-spacing-2);
+    justify-content: center;
+    padding: var(--ac-spacing-2) var(--ac-spacing-4);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      border-color: rgb(var(--ac-color-400));
+      color: var(--ac-primary-hover);
+    }
+
+    &[aria-selected="true"] {
+      border-color: rgb(var(--ac-primary));
+      color: rgb(var(--ac-primary));
+      font-weight: var(--ac-font-medium);
+    }
+  }
+</style>
+
+<script>
+  import { DOMLoaded } from "@ts/utils";
+  import { handleTabButtonClick } from "@ts/tab.ts";
+
+  DOMLoaded(() => {
+    const tabsButtons = document.querySelectorAll(
+      "[data-tab-button]"
+    ) as NodeListOf<HTMLButtonElement>;
+
+    tabsButtons.forEach((button) => {
+      button.addEventListener("click", () => handleTabButtonClick(button));
+    });
+  });
+</script>

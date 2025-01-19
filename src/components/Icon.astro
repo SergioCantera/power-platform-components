@@ -1,0 +1,21 @@
+---
+import { icons } from "@data/icons.ts";
+
+interface Props {
+  icon: string;
+  class?: string;
+}
+
+const { icon, class: className, ...props } = Astro.props;
+const iconPath = icons.find((i) => i.name === icon)?.path;
+---
+
+<svg
+  class={className}
+  width="24"
+  height="24"
+  fill="none"
+  viewBox="0 0 24 24"
+  set:html={iconPath}
+  {...props}
+/>
