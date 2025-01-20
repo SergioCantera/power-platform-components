@@ -1,19 +1,17 @@
 ---
 import {
-  defaultAccordion,
-  flushAccordion,
+  defaultJumbotron,
+  gradientBackgroundJumbotron,
   importCode,
-} from "@data/accordion.ts";
-import DefaultAccordion from "@components/accordions/DefaultAccordion.astro";
-import AccordionFlush from "@components/accordions/AccordionFlush.astro";
+} from "@data/jumbotron.ts";
+import DefaultJumbotron from "@components/jumbotrons/DefaultJumbotron.astro";
+import GradientBackgroundJumbotron from "@components/jumbotrons/GradientBackgroundJumbotron.astro";
 import Article from "@components/Article.astro";
 import CodeBlock from "@components/CodeBlock.astro";
 import Content from "@layouts/Content.astro";
 import Header from "@components/Header.astro";
 import Heading from "@components/Heading.astro";
 import Layout from "@layouts/Layout.astro";
-import List from "@components/List.astro";
-import ListItem from "@components/ListItem.astro";
 import Preview from "@components/Preview.astro";
 import Prose from "@components/Prose.astro";
 import Sidebar from "@layouts/Sidebar.astro";
@@ -22,7 +20,7 @@ import Tab from "@components/Tab.astro";
 import TabItem from "@components/TabItem.astro";
 ---
 
-<Layout title="Power Pages Components - Accordion">
+<Layout title="Power Pages Components - Jumbotron">
   <Header />
   <Sidebar />
   <Content>
@@ -33,25 +31,25 @@ import TabItem from "@components/TabItem.astro";
           level={1}
           gradient
           class="inline-block"
-          text="Accordion"
+          text="Jumbotron"
         />
         <Prose>
           <Text>
-            The Accordion component is a flexible container that organizes
-            expandable content items. It can be used to group multiple
-            AccordionItem components and offers various style variants.
+            The Jumbotron (hero) component can be used as the first section of
+            your website with a focus on a marketing message to increase the
+            likelihood of the user to continue browsing your website.
           </Text>
         </Prose>
         <Prose>
           <Heading level={2} text="Import" />
           <Text>
-            To use the Accordion component, first import it into your project:
+            To use the Jumbotron component, first import it into your project:
           </Text>
           <CodeBlock lang="astro" code={importCode} />
         </Prose>
         <Prose>
           <Heading level={2} text="Usage" />
-          <Heading level={3} text="Default accordion" />
+          <Heading level={3} text="Default Jumbotron" />
           <Text>
             The Accordion component consists of an Accordion container and
             AccordionItem children. The AccordionItem component is used to
@@ -60,14 +58,14 @@ import TabItem from "@components/TabItem.astro";
           <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
             <TabItem active>
               <Preview>
-                <DefaultAccordion />
+                <DefaultJumbotron />
               </Preview>
             </TabItem>
             <TabItem>
-              <CodeBlock lang="html" code={defaultAccordion} />
+              <CodeBlock lang="html" code={defaultJumbotron} />
             </TabItem>
           </Tab>
-          <Heading level={3} text="Flush Accordion" />
+          <Heading level={3} text="Gradient Backgound Jumbotron" />
           <Text>
             The Accordion component consists of an Accordion container and
             AccordionItem children. The AccordionItem component is used to
@@ -76,28 +74,28 @@ import TabItem from "@components/TabItem.astro";
           <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
             <TabItem active>
               <Preview>
-                <AccordionFlush />
+                <GradientBackgroundJumbotron />
               </Preview>
             </TabItem>
             <TabItem>
-              <CodeBlock lang="html" code={flushAccordion} />
+              <CodeBlock lang="html" code={gradientBackgroundJumbotron} />
             </TabItem>
           </Tab>
         </Prose>
       </Article>
     </section>
-  </Content>
 
-  <style>
-    .custom-button {
-      --ac-btn-border-radius: 999px;
-      --ac-btn-font-weight: 600;
-      border-width: 0;
-      background-image: linear-gradient(
-        90deg,
-        rgb(var(--ac-primary)) 0%,
-        rgb(var(--ac-secondary)) 100%
-      );
-    }
-  </style>
+    <style>
+      .custom-button {
+        --ac-btn-border-radius: 999px;
+        --ac-btn-font-weight: 600;
+        border-width: 0;
+        background-image: linear-gradient(
+          90deg,
+          rgb(var(--ac-primary)) 0%,
+          rgb(var(--ac-secondary)) 100%
+        );
+      }
+    </style>
+  </Content>
 </Layout>

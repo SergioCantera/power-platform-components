@@ -1,6 +1,7 @@
 ---
 import Nav from "@components/Nav.astro";
 import NavItem from "@components/NavItem.astro";
+import NavSubItem from "@components/NavSubItem.astro";
 import NavLink from "@components/NavLink.astro";
 
 const { class: className } = Astro.props;
@@ -14,27 +15,23 @@ const { class: className } = Astro.props;
   ]}
 >
   <div
-    class="w-full h-full lg:border-r border-neutral-300/50 px-5 py-4 overflow-y-auto"
+    class="w-full h-full lg:border-r border-neutral-300/50 px-6 py-5 overflow-y-auto"
   >
     <Nav>
       <NavItem title="Guide" open>
-        <NavLink href="/guide/installation" label="Installation" />
+        <NavLink href="/guide/configuration" label="Configuration" />
       </NavItem>
       <NavItem title="Components" open>
         <NavLink href="/components/accordion" label="Accordion" />
         <NavLink href="/components/button" label="Button" />
         <NavLink href="/components/card" label="Card" />
         <NavLink href="/components/carousel" label="Carousel" />
-        <NavLink href="/components/checkbox" label="Checkbox" />
-        <NavLink href="/components/icon" label="Icon" />
-        <NavLink href="/components/input" label="Input" />
+        <NavLink href="/components/gallery" label="Gallery" />
+        <NavLink href="/components/jumbotron" label="Jumbotron" />
+        <NavSubItem title="Forms" open>
+          <NavLink href="/components/input" label="Floating Labels" />
+        </NavSubItem>
         <NavLink href="/components/modal" label="Modal" />
-        <NavLink href="/components/radio" label="Radio" />
-        <NavLink href="/components/select" label="Select" />
-        <NavLink href="/components/switch" label="Switch" />
-        <NavLink href="/components/tab" label="Tab" />
-        <NavLink href="/components/textarea" label="Textarea" />
-        <NavLink href="/components/theme-switch" label="Theme Switch" />
       </NavItem>
     </Nav>
   </div>

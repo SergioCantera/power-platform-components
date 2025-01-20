@@ -1,19 +1,17 @@
 ---
 import {
-  defaultAccordion,
-  flushAccordion,
+  defaultGallery,
+  featuredImageGallery,
   importCode,
-} from "@data/accordion.ts";
-import DefaultAccordion from "@components/accordions/DefaultAccordion.astro";
-import AccordionFlush from "@components/accordions/AccordionFlush.astro";
+} from "@data/gallery.ts";
+import DefaultGallery from "@components/galleries/DefaultGallery.astro";
+import FeaturedImageGallery from "@components/galleries/FeaturedImageGallery.astro";
 import Article from "@components/Article.astro";
 import CodeBlock from "@components/CodeBlock.astro";
 import Content from "@layouts/Content.astro";
 import Header from "@components/Header.astro";
 import Heading from "@components/Heading.astro";
 import Layout from "@layouts/Layout.astro";
-import List from "@components/List.astro";
-import ListItem from "@components/ListItem.astro";
 import Preview from "@components/Preview.astro";
 import Prose from "@components/Prose.astro";
 import Sidebar from "@layouts/Sidebar.astro";
@@ -22,7 +20,7 @@ import Tab from "@components/Tab.astro";
 import TabItem from "@components/TabItem.astro";
 ---
 
-<Layout title="Power Pages Components - Accordion">
+<Layout title="Power Pages Components - Gallery">
   <Header />
   <Sidebar />
   <Content>
@@ -33,13 +31,14 @@ import TabItem from "@components/TabItem.astro";
           level={1}
           gradient
           class="inline-block"
-          text="Accordion"
+          text="Gallery"
         />
         <Prose>
           <Text>
-            The Accordion component is a flexible container that organizes
-            expandable content items. It can be used to group multiple
-            AccordionItem components and offers various style variants.
+            The gallery component can be used to show multiple images inside a
+            masonry grid layout styles with the utility-first classes from
+            Tailwind CSS to show a collection of pictures to your users based on
+            various layouts, styles, sizes, and colors.
           </Text>
         </Prose>
         <Prose>
@@ -51,36 +50,34 @@ import TabItem from "@components/TabItem.astro";
         </Prose>
         <Prose>
           <Heading level={2} text="Usage" />
-          <Heading level={3} text="Default accordion" />
+          <Heading level={3} text="Default Gallery" />
           <Text>
-            The Accordion component consists of an Accordion container and
-            AccordionItem children. The AccordionItem component is used to
-            define each expandable content item within the Accordion container.
+            Use this component to show a collection of images inside a gallery
+            with three pictures on a row.
           </Text>
           <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
             <TabItem active>
               <Preview>
-                <DefaultAccordion />
+                <DefaultGallery />
               </Preview>
             </TabItem>
             <TabItem>
-              <CodeBlock lang="html" code={defaultAccordion} />
+              <CodeBlock lang="html" code={defaultGallery} />
             </TabItem>
           </Tab>
-          <Heading level={3} text="Flush Accordion" />
+          <Heading level={3} text="Featured Image Gallery" />
           <Text>
-            The Accordion component consists of an Accordion container and
-            AccordionItem children. The AccordionItem component is used to
-            define each expandable content item within the Accordion container.
+            This example can be used to feature the most important image and
+            show a row of five pictures below.
           </Text>
           <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
             <TabItem active>
               <Preview>
-                <AccordionFlush />
+                <FeaturedImageGallery />
               </Preview>
             </TabItem>
             <TabItem>
-              <CodeBlock lang="html" code={flushAccordion} />
+              <CodeBlock lang="html" code={featuredImageGallery} />
             </TabItem>
           </Tab>
         </Prose>

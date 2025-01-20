@@ -1,0 +1,161 @@
+---
+import Article from "@components/Article.astro";
+import Button from "@components/Button.astro";
+import CodeBlock from "@components/CodeBlock.astro";
+import Content from "@layouts/Content.astro";
+import Header from "@components/Header.astro";
+import Heading from "@components/Heading.astro";
+import Layout from "@layouts/Layout.astro";
+import Link from "@components/Link.astro";
+import List from "@components/List.astro";
+import ListItem from "@components/ListItem.astro";
+import Preview from "@components/Preview.astro";
+import Prose from "@components/Prose.astro";
+import Sidebar from "@layouts/Sidebar.astro";
+import Tab from "@components/Tab.astro";
+import TabItem from "@components/TabItem.astro";
+import Text from "@components/Text.astro";
+import FloatingOutlinedLabel from "@components/inputs/FloatingOutlinedLabel.astro";
+
+const copyCode = `
+<div class="relative">
+  <input type="text" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-100 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+  <label for="floating_filled" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">{{ textLabel }}</label>
+</div>
+
+{% manifest %} 
+  { 
+    "type": "Functional", 
+    "displayName": "Floating Filled Label", 
+    "description": "Floating ", 
+    "params": [
+      {
+        "id": "textLabel",
+        "displayName": "Text Label",
+        "description": "Text for label"
+      }
+    ] 
+  } 
+{% endmanifest %}
+`;
+---
+
+<Layout title="Power Pages Components - Configuration Guide">
+  <Header />
+  <Sidebar />
+  <Content>
+    <section>
+      <Article>
+        <Heading
+          slot="header"
+          level={1}
+          gradient
+          class="inline-block"
+          text="Configuration Guide"
+        />
+        <Prose>
+          <Heading level={2} text="Prerequisites" />
+          <Text>
+            Before you can start using the Power Pages Components, you need to
+            add some code snippets to your project:
+          </Text>
+          <List>
+            <ListItem>
+              <Text class="my-4">
+                <strong>Head/Bottom Content Snippet</strong>: Make sure you add
+                the following code to the 'Head/Bottom' content snippet. If it
+                doesn't exist, you can create it.
+              </Text>
+              <CodeBlock
+                lang="html"
+                code="<script src='https://cdn.tailwindcss.com'></script>"
+              />
+              <Text class="my-4"
+                >By adding this Play CDN script tag to the content snippet, you
+                can start using Tailwind’s utility classes to style your
+                content.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text class="my-4">
+                <strong>Flowbite CDN</strong>: In your web page (or web
+                template) file add the following script tag just before the end
+                of the body:
+              </Text>
+              <CodeBlock
+                lang="html"
+                code="<script src='https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js'></script>"
+              />
+              <Text class="mt-4 mb-8">
+                This allows you to use the data attributes from the Power Page
+                component examples (inherited from Flowbite) and will make them
+                interactive automatically without needing to write custom
+                JavaScript and you can just copy-paste them from these docs.
+              </Text>
+            </ListItem>
+          </List>
+          <Prose>
+            <Heading level={2} text="Configuring the Components" />
+            <Text class="text-2xl font-semibold"
+              >1. Copy the code from component</Text
+            >
+            <Text>
+              To use the Power Pages Components, firstly you need to copy the
+              code for the component you want.
+            </Text>
+            <CodeBlock lang="html" code={copyCode} />
+            <Text class="text-2xl font-semibold"
+              >2. Create a Web Template file and Paste the code</Text
+            >
+            <Text>
+              After that, you must create a Web Template and paste the code in
+              the Origin text field:
+            </Text>
+            <Text class="text-2xl font-semibold">3. Use the Component</Text>
+            <Text>
+              Then you can use it in your site from Power Pages Studio or with a
+              Liquid statement. Here's an example of how to use a Floating
+              Outlined Label Input component:
+            </Text>
+
+            <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
+              <TabItem active>
+                <Preview>
+                  <FloatingOutlinedLabel />
+                </Preview>
+              </TabItem>
+              <TabItem>
+                <CodeBlock
+                  lang="html"
+                  code="{% include 'FloatingOutlinedLabel' 'textLabel':'First name' %}"
+                />
+              </TabItem>
+            </Tab>
+          </Prose>
+          <Prose>
+            <Heading level={2} text="Additional Information" />
+            <List>
+              <ListItem>
+                <Text>
+                  <strong>Support</strong>: If you encounter any issues or have
+                  questions, feel free to open an issue on our <Link
+                    href="https://github.com/SergioCantera/power-pages-components"
+                    target="_blank">GitHub repository.</Link
+                  >
+                </Text>
+              </ListItem>
+            </List>
+          </Prose>
+          <Prose>
+            <Heading level={2} text="Next Steps" />
+            <Text>
+              Now that you know how start adding them into your project. Check
+              out the <Link href="/components/button">Component Guide</Link> for
+              detailed information on how to use each component.
+            </Text>
+          </Prose>
+        </Prose>
+      </Article>
+    </section>
+  </Content>
+</Layout>

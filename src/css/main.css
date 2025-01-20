@@ -42,13 +42,13 @@
   --ac-font-sans: ui-sans-serif, system-ui, sans-serif;
 
   /* Font size */
-  --ac-text-xs: 0.75rem;
-  --ac-text-sm: 0.875rem;
-  --ac-text-md: 1rem;
-  --ac-text-lg: 1.125rem;
-  --ac-text-xl: 1.25rem;
-  --ac-text-2xl: 1.5rem;
-  --ac-text-3xl: 1.875rem;
+  --ac-text-xs: 1rem;
+  --ac-text-sm: 1.1rem;
+  --ac-text-md: 1.25rem;
+  --ac-text-lg: 1.275rem;
+  --ac-text-xl: 1.5rem;
+  --ac-text-2xl: 1.75rem;
+  --ac-text-3xl: 2.125rem;
 
   /* Font weight */
   --ac-font-light: 300;

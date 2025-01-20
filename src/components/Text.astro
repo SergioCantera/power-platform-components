@@ -7,12 +7,12 @@ const { class: className, ...props } = Astro.props;
 
 const strongClasses = "[&>strong]:text-neutral-700 [&>strong]:font-medium";
 const codeClasses =
-  "[&>code]:inline-block [&>code]:h-fit [&>code]:bg-neutral-200/50 [&>code]:text-neutral-600 [&>code]:text-sm [&>code]:px-2 [&>code]:py-0.5 [&>code]:rounded";
+  "[&>code]:inline-block [&>code]:h-fit [&>code]:bg-neutral-200/50 [&>code]:text-neutral-600 [&>code]:text-lg [&>code]:px-2 [&>code]:py-0.5 [&>code]:rounded";
 ---
 
 <p
   class:list={[
-    "text-neutral-500 leading-relaxed",
+    "text-neutral-500 leading-relaxed text-lg",
     strongClasses,
     codeClasses,
     className,

@@ -1,6 +1,13 @@
 ---
-import { basicUsageCode, importCode } from "@data/card.ts";
+import {
+  defaultCard,
+  cardWithButton,
+  cardWithImage,
+  importCode,
+} from "@data/card.ts";
 
+import DefaultCard from "@components/cards/DefaultCard.astro";
+import CardWithButton from "@components/cards/CardWithButton.astro";
 import CardWithImage from "@components/cards/CardWithImage.astro";
 import Article from "@components/Article.astro";
 import CodeBlock from "@components/CodeBlock.astro";
@@ -33,25 +40,55 @@ import TabItem from "@components/TabItem.astro";
         />
         <Prose>
           <Text>
-            Use these responsive card components to show data entries and
-            information to your users in multiple forms and contexts such as for
-            your blog, application, user profiles, and more.
+            Use these card components to show data entries and information to
+            your users in multiple forms and contexts such as for your blog,
+            application, user profiles, and more.
           </Text>
         </Prose>
         <Prose>
-          <Heading level={2} text="Import" />
+          <Heading level={2} text="Copy the code" />
           <Text>
-            To use the Card component, first import it into your project:
+            To use the Card component, first copy the code and paste it into a
+            Web Template.
           </Text>
-          <CodeBlock lang="astro" code={importCode} />
         </Prose>
         <Prose>
           <Heading level={2} text="Usage" />
+          <Heading level={3} text="Default Card" />
+          <Text>
+            You can use the following example of a default card element with a
+            title and a subtitle.
+          </Text>
+          <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
+            <TabItem active>
+              <Preview>
+                <DefaultCard />
+              </Preview>
+            </TabItem>
+            <TabItem>
+              <CodeBlock lang="html" code={defaultCard} />
+            </TabItem>
+          </Tab>
+          <Heading level={3} text="Card with button" />
+          <Text>
+            You can use the following example of a card element with a title, a
+            subtitle and an action button.
+          </Text>
+          <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
+            <TabItem active>
+              <Preview>
+                <CardWithButton />
+              </Preview>
+            </TabItem>
+            <TabItem>
+              <CodeBlock lang="html" code={cardWithButton} />
+            </TabItem>
+          </Tab>
+          <Heading level={3} text="Card with image" />
           <Text>
             You can use the following example of a card element with an image
             for blog posts, user cards, and many more.
           </Text>
-          <Heading level={3} text="Basic Usage" />
           <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
             <TabItem active>
               <Preview>
@@ -59,44 +96,9 @@ import TabItem from "@components/TabItem.astro";
               </Preview>
             </TabItem>
             <TabItem>
-              <CodeBlock lang="html" code={basicUsageCode} />
+              <CodeBlock lang="html" code={cardWithImage} />
             </TabItem>
           </Tab>
-
-          <Prose>
-            <Heading level={2} text="Accessibility" />
-            <List>
-              <ListItem>
-                <Text>
-                  <strong>Keyboard Navigation</strong>: Ensure that users can
-                  navigate the accordion using the keyboard. The <code
-                    >summary</code
-                  > element should be focusable, and pressing the <code
-                    >Enter</code
-                  > or <code>Space</code> key should toggle the expanded state of
-                  the
-                  <code>AccordionItem</code>.
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text>
-                  <strong>Focus Management</strong>: When an accordion item is
-                  expanded, focus should be managed to ensure that the content
-                  inside the <code>AccordionItem</code> is accessible. Ensure that
-                  tabbing through the accordion leads to expected behavior.
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text>
-                  <strong>Semantic HTML</strong>: The use of <code>details</code
-                  >
-                  and <code>summary</code>
-                  elements provides inherent accessibility benefits, as these elements
-                  are recognized by screen readers and provide the expected behavior.
-                </Text>
-              </ListItem>
-            </List>
-          </Prose>
         </Prose>
       </Article>
     </section>
