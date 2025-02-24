@@ -1,20 +1,14 @@
 ---
-import {
-  floatingFilledLabel,
-  floatingOutlinedLabel,
-  importCode,
-} from "@data/input.ts";
+import { floatingFilledLabel, floatingOutlinedLabel } from "@data/input.ts";
 
-import FlaotingFilledLabel from "@components/inputs/FloatingFilledLabel.astro";
-import FlaotingOutlinedLabel from "@components/inputs/FloatingOutlinedLabel.astro";
+import FloatingFilledLabel from "@components/inputs/FloatingFilledLabel.astro";
+import FloatingOutlinedLabel from "@components/inputs/FloatingOutlinedLabel.astro";
 import Article from "@components/Article.astro";
 import CodeBlock from "@components/CodeBlock.astro";
 import Content from "@layouts/Content.astro";
 import Header from "@components/Header.astro";
 import Heading from "@components/Heading.astro";
 import Layout from "@layouts/Layout.astro";
-import List from "@components/List.astro";
-import ListItem from "@components/ListItem.astro";
 import Preview from "@components/Preview.astro";
 import Prose from "@components/Prose.astro";
 import Sidebar from "@layouts/Sidebar.astro";
@@ -38,47 +32,42 @@ import TabItem from "@components/TabItem.astro";
         />
         <Prose>
           <Text>
-            Use these responsive card components to show data entries and
-            information to your users in multiple forms and contexts such as for
-            your blog, application, user profiles, and more.
+            Use the floating label style for the input field elements to
+            replicate the Material UI design system from Google and choose from
+            multiple styles and sizes.
           </Text>
         </Prose>
         <Prose>
-          <Heading level={2} text="Import" />
+          <Heading level={2} text="Copy & Paste code" />
           <Text>
-            To use the Card component, first import it into your project:
+            To use the Floating Label component, first copy the code and paste
+            it into a Web Template.
           </Text>
-          <CodeBlock lang="astro" code={importCode} />
         </Prose>
         <Prose>
           <Heading level={2} text="Usage" />
           <Text>
-            You can use the following example of a card element with an image
-            for blog posts, user cards, and many more.
+            Get started with the following three styles for the floating label
+            component and use the label tag as a visual placeholder using the
+            peer-placeholder-shown and peer-focus utility classes from Tailwind
+            CSS
           </Text>
-          <Heading level={3} text="Basic Usage" />
+          <Heading level={3} text="Floating Filled Label" />
           <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
             <TabItem active>
               <Preview>
-                <FlaotingFilledLabel />
+                <FloatingFilledLabel />
               </Preview>
             </TabItem>
             <TabItem>
               <CodeBlock lang="html" code={floatingFilledLabel} />
             </TabItem>
           </Tab>
-        </Prose>
-        <Prose>
-          <Heading level={2} text="Usage" />
-          <Text>
-            You can use the following example of a card element with an image
-            for blog posts, user cards, and many more.
-          </Text>
-          <Heading level={3} text="Basic Usage" />
+          <Heading level={3} text="Floating Outlined Label" />
           <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
             <TabItem active>
               <Preview>
-                <FlaotingOutlinedLabel />
+                <FloatingOutlinedLabel />
               </Preview>
             </TabItem>
             <TabItem>

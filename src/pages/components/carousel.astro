@@ -1,24 +1,5 @@
 ---
-import {
-  basicUsageCode,
-  customVariablesCode,
-  variantLightCode,
-  variantShadowCode,
-  variantBorderedCode,
-  variantSplittedCode,
-  openCode,
-  interactionCode,
-  importCode,
-  tableHead,
-  tableRows,
-  tableItemRows,
-} from "@data/carousel.ts";
-/*import {
-  Accordion as AccordionAc,
-  Tab,
-  TabItem,
-  AccordionItem,
-} from "free-astro-components";*/
+import { basicUsageCode } from "@data/carousel.ts";
 import IndicatorCarousel from "@components/carousels/IndicatorCarousel.astro";
 import Article from "@components/Article.astro";
 import CodeBlock from "@components/CodeBlock.astro";
@@ -34,7 +15,6 @@ import Sidebar from "@layouts/Sidebar.astro";
 import Text from "@components/Text.astro";
 import Tab from "@components/Tab.astro";
 import TabItem from "@components/TabItem.astro";
-import Table from "@components/Table.astro";
 ---
 
 <Layout title="Power Pages Components - Carousel">
@@ -57,20 +37,18 @@ import Table from "@components/Table.astro";
           </Text>
         </Prose>
         <Prose>
-          <Heading level={2} text="Import" />
+          <Heading level={2} text="Copy & Paste code" />
           <Text>
-            The carousel component can be used to cycle through a set of
-            elements using custom options, controls, and indicators based on the
-            JavaScript object from Flowbite:
+            To use the Carousel component, first copy the code and paste it into
+            a Web Template.
           </Text>
-          <CodeBlock lang="astro" code={importCode} />
         </Prose>
         <Prose>
           <Heading level={2} text="Usage" />
           <Text>
-            The Accordion component consists of an Accordion container and
-            AccordionItem children. The AccordionItem component is used to
-            define each expandable content item within the Accordion container.
+            The carousel component can be used to cycle through a set of
+            elements using custom options, controls, and indicators based on the
+            JavaScript object from Flowbite.
           </Text>
           <Heading level={3} text="Basic Usage" />
           <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>

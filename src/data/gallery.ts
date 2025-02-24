@@ -1,96 +1,95 @@
-export const importCode = `
----
-import { Gallery } from 'free-astro-components'
----
-`
-
 export const defaultGallery = `
-<div class="grid grid-cols-{{ smCols }} md:grid-cols-{{ mdCols }} gap-4">
+<div class="defaultgallery-container">
   <div>
     <img
-      class="h-auto max-w-full rounded-lg"
+      class="defaultgallery-item"
       src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg"
       alt=""
     />
   </div>
   <div>
     <img
-      class="h-auto max-w-full rounded-lg"
+      class="defaultgallery-item"
       src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg"
       alt=""
     />
   </div>
   <div>
     <img
-      class="h-auto max-w-full rounded-lg"
+      class="defaultgallery-item"
       src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg"
       alt=""
     />
   </div>
   <div>
     <img
-      class="h-auto max-w-full rounded-lg"
+      class="defaultgallery-item"
       src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg"
       alt=""
     />
   </div>
   <div>
     <img
-      class="h-auto max-w-full rounded-lg"
+      class="defaultgallery-item"
       src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg"
       alt=""
     />
   </div>
   <div>
     <img
-      class="h-auto max-w-full rounded-lg"
+      class="defaultgallery-item"
       src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg"
       alt=""
     />
   </div>
   <div>
     <img
-      class="h-auto max-w-full rounded-lg"
+      class="defaultgallery-item"
       src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg"
       alt=""
     />
   </div>
   <div>
     <img
-      class="h-auto max-w-full rounded-lg"
+      class="defaultgallery-item"
       src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-7.jpg"
       alt=""
     />
   </div>
   <div>
     <img
-      class="h-auto max-w-full rounded-lg"
+      class="defaultgallery-item"
       src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-8.jpg"
       alt=""
     />
   </div>
   <div>
     <img
-      class="h-auto max-w-full rounded-lg"
+      class="defaultgallery-item"
       src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-9.jpg"
       alt=""
     />
   </div>
   <div>
     <img
-      class="h-auto max-w-full rounded-lg"
+      class="defaultgallery-item"
       src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg"
       alt=""
     />
   </div>
   <div>
     <img
-      class="h-auto max-w-full rounded-lg"
+      class="defaultgallery-item"
       src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg"
       alt=""
     />
   </div>
 </div>
+<style>
+.defaultgallery-container{display:grid;grid-gap:1rem;grid-template-columns:repeat({{smCols}},1fr);}
+.defaultgallery-item{height:auto;max-width:100%;border-radius:.5rem;}
+@media (min-width: 768px) {.defaultgallery-container{grid-template-columns:repeat({{mdCols}},1fr);}}
+</style>
 
 {% manifest %} 
   { 
@@ -115,52 +114,56 @@ export const defaultGallery = `
 `
 
 export const featuredImageGallery = `
-<div class="grid gap-4">
+<div class="featuredgallery-container">
   <div>
     <img
-      class="h-auto max-w-full rounded-lg"
+      class="featuredgallery-item"
       src="https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg"
       alt=""
     />
   </div>
-  <div class="grid grid-cols-5 gap-4">
+  <div class="featuredgallery-subcontainer">
     <div>
       <img
-        class="h-auto max-w-full rounded-lg"
+        class="featuredgallery-item"
         src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg"
         alt=""
       />
     </div>
     <div>
       <img
-        class="h-auto max-w-full rounded-lg"
+        class="featuredgallery-item"
         src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg"
         alt=""
       />
     </div>
     <div>
       <img
-        class="h-auto max-w-full rounded-lg"
+        class="featuredgallery-item"
         src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg"
         alt=""
       />
     </div>
     <div>
       <img
-        class="h-auto max-w-full rounded-lg"
+        class="featuredgallery-item"
         src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg"
         alt=""
       />
     </div>
     <div>
       <img
-        class="h-auto max-w-full rounded-lg"
+        class="featuredgallery-item"
         src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg"
         alt=""
       />
     </div>
   </div>
 </div>
+<style>
+.featuredgallery-container{display:grid;grid-gap:1rem;}.featuredgallery-item{height:auto;max-width:100%;border-radius:.5rem;}
+.featuredgallery-subcontainer{display:grid;grid-template-columns:repeat({{ cols }},1fr);grid-gap:1rem;}
+</style>
 
 {% manifest %} 
   { 

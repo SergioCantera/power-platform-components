@@ -1,10 +1,5 @@
 ---
-import {
-  defaultCard,
-  cardWithButton,
-  cardWithImage,
-  importCode,
-} from "@data/card.ts";
+import { defaultCard, cardWithButton, cardWithImage } from "@data/card.ts";
 
 import DefaultCard from "@components/cards/DefaultCard.astro";
 import CardWithButton from "@components/cards/CardWithButton.astro";
@@ -15,8 +10,6 @@ import Content from "@layouts/Content.astro";
 import Header from "@components/Header.astro";
 import Heading from "@components/Heading.astro";
 import Layout from "@layouts/Layout.astro";
-import List from "@components/List.astro";
-import ListItem from "@components/ListItem.astro";
 import Preview from "@components/Preview.astro";
 import Prose from "@components/Prose.astro";
 import Sidebar from "@layouts/Sidebar.astro";
@@ -46,7 +39,7 @@ import TabItem from "@components/TabItem.astro";
           </Text>
         </Prose>
         <Prose>
-          <Heading level={2} text="Copy the code" />
+          <Heading level={2} text="Copy & Paste code" />
           <Text>
             To use the Card component, first copy the code and paste it into a
             Web Template.

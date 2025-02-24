@@ -1,9 +1,5 @@
 ---
-import {
-  defaultAccordion,
-  flushAccordion,
-  importCode,
-} from "@data/accordion.ts";
+import { defaultAccordion, flushAccordion } from "@data/accordion.ts";
 import DefaultAccordion from "@components/accordions/DefaultAccordion.astro";
 import AccordionFlush from "@components/accordions/AccordionFlush.astro";
 import Article from "@components/Article.astro";
@@ -12,8 +8,6 @@ import Content from "@layouts/Content.astro";
 import Header from "@components/Header.astro";
 import Heading from "@components/Heading.astro";
 import Layout from "@layouts/Layout.astro";
-import List from "@components/List.astro";
-import ListItem from "@components/ListItem.astro";
 import Preview from "@components/Preview.astro";
 import Prose from "@components/Prose.astro";
 import Sidebar from "@layouts/Sidebar.astro";
@@ -43,11 +37,11 @@ import TabItem from "@components/TabItem.astro";
           </Text>
         </Prose>
         <Prose>
-          <Heading level={2} text="Import" />
+          <Heading level={2} text="Copy & Paste code" />
           <Text>
-            To use the Accordion component, first import it into your project:
+            To use the Accordion component, first copy the code and paste it
+            into a Web Template.
           </Text>
-          <CodeBlock lang="astro" code={importCode} />
         </Prose>
         <Prose>
           <Heading level={2} text="Usage" />

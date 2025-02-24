@@ -33,22 +33,23 @@ import TabItem from "@components/TabItem.astro";
           <Text>
             Use the modal component to show interactive dialogs and
             notifications to your website users available in multiple sizes,
-            colors, and styles.
+            colors, and styles
           </Text>
         </Prose>
         <Prose>
-          <Heading level={2} text="Import" />
+          <Heading level={2} text="Copy & Paste code" />
           <Text>
-            To use the Modal component, first import it into your project:
+            To use the Modal component, first copy the code and paste it into a
+            Web Template.
           </Text>
-          <CodeBlock lang="astro" code={importCode} />
         </Prose>
         <Prose>
           <Heading level={2} text="Usage" />
           <Heading level={3} text="Default Modal" />
           <Text>
-            You can use the following example of a card element with an image
-            for blog posts, user cards, and many more.
+            In order to create a modal you only have to add
+            data-modal-target="modalId" data attribute where modalId is the ID
+            of the modal that you are targeting.
           </Text>
           <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
             <TabItem active>
