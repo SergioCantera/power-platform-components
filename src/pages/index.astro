@@ -1,6 +1,5 @@
 ---
 import Button from "@components/Button.astro";
-import Code from "@components/Code.astro";
 import CTA from "@sections/CTA.astro";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
@@ -10,26 +9,29 @@ import Layout from "@layouts/Layout.astro";
 import Sidebar from "@layouts/Sidebar.astro";
 ---
 
-<Layout title="Power Pages Components">
+<Layout title="Power Platform Components">
   <Sidebar class="lg:hidden" />
   <Header />
   <main>
     <Hero
       align="center"
-      title="A collection of <strong>Power Pages Components</strong>"
-      description="You can use these components to build your Power Pages projects faster."
+      title="A collection of <strong>Power Platform Components</strong>"
+      description="You can use these components to build your Power Apps, Power Pages, Copilot Studio projects faster."
     >
       <div>
-        <Button href="/guide/configuration" label="Get started" />
+        <Button href="/guide/power-apps-configuration" label="Get started" />
       </div>
     </Hero>
     <Intro />
     <CTA
       align="center"
       title="Ready to <strong>Get Started?</strong>"
-      description="Explore my collection of Power Pages components and start building your next project today."
+      description="Explore my collection of Power Platform components and start building your next project today."
     >
-      <Button href="/components/accordion" label="Explore Components" />
+      <Button
+        href="/power-apps-components/accordion"
+        label="Explore Components"
+      />
     </CTA>
   </main>
   <Footer />

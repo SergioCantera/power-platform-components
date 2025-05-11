@@ -1,0 +1,97 @@
+---
+import { defaultAccordion, flushAccordion } from "@data/accordion.ts";
+import DefaultAccordion from "@components/accordions/DefaultAccordion.astro";
+import AccordionFlush from "@components/accordions/AccordionFlush.astro";
+import Article from "@components/Article.astro";
+import CodeBlock from "@components/CodeBlock.astro";
+import Content from "@layouts/Content.astro";
+import Header from "@components/Header.astro";
+import Heading from "@components/Heading.astro";
+import Layout from "@layouts/Layout.astro";
+import Preview from "@components/Preview.astro";
+import Prose from "@components/Prose.astro";
+import Sidebar from "@layouts/Sidebar.astro";
+import Text from "@components/Text.astro";
+import Tab from "@components/Tab.astro";
+import TabItem from "@components/TabItem.astro";
+---
+
+<Layout title="Power Apps Components - Accordion">
+  <Header />
+  <Sidebar />
+  <Content>
+    <section>
+      <Article>
+        <Heading
+          slot="header"
+          level={1}
+          gradient
+          class="inline-block"
+          text="Accordion"
+        />
+        <Prose>
+          <Text>
+            The Accordion component is a flexible container that organizes
+            expandable content items. It can be used to group multiple
+            AccordionItem components and offers various style variants.
+          </Text>
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Copy & Paste code" />
+          <Text>
+            To use the Accordion component, first copy the code and paste it
+            into a Web Template.
+          </Text>
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Usage" />
+          <Heading level={3} text="Default accordion" />
+          <Text>
+            The Accordion component consists of an Accordion container and
+            AccordionItem children. The AccordionItem component is used to
+            define each expandable content item within the Accordion container.
+          </Text>
+          <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
+            <TabItem active>
+              <Preview>
+                <DefaultAccordion />
+              </Preview>
+            </TabItem>
+            <TabItem>
+              <CodeBlock lang="html" code={defaultAccordion} />
+            </TabItem>
+          </Tab>
+          <Heading level={3} text="Flush Accordion" />
+          <Text>
+            The Accordion component consists of an Accordion container and
+            AccordionItem children. The AccordionItem component is used to
+            define each expandable content item within the Accordion container.
+          </Text>
+          <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
+            <TabItem active>
+              <Preview>
+                <AccordionFlush />
+              </Preview>
+            </TabItem>
+            <TabItem>
+              <CodeBlock lang="html" code={flushAccordion} />
+            </TabItem>
+          </Tab>
+        </Prose>
+      </Article>
+    </section>
+  </Content>
+
+  <style>
+    .custom-button {
+      --ac-btn-border-radius: 999px;
+      --ac-btn-font-weight: 600;
+      border-width: 0;
+      background-image: linear-gradient(
+        90deg,
+        rgb(var(--ac-primary)) 0%,
+        rgb(var(--ac-secondary)) 100%
+      );
+    }
+  </style>
+</Layout>

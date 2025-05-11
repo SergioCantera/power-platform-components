@@ -19,19 +19,32 @@ const { class: className } = Astro.props;
   >
     <Nav>
       <NavItem title="Guide" open>
-        <NavLink href="/guide/configuration" label="Configuration" />
+        <NavLink
+          href="/guide/power-apps-configuration"
+          label="Power Apps Configuration"
+        />
+        <NavLink
+          href="/guide/power-pages-configuration"
+          label="Power Pages Configuration"
+        />
       </NavItem>
-      <NavItem title="Components" open>
-        <NavLink href="/components/accordion" label="Accordion" />
-        <NavLink href="/components/button" label="Button" />
-        <NavLink href="/components/card" label="Card" />
-        <NavLink href="/components/carousel" label="Carousel" />
-        <NavLink href="/components/gallery" label="Gallery" />
-        <NavLink href="/components/jumbotron" label="Jumbotron" />
+      <NavItem title="Power Apps Components" open>
+        <NavLink href="/power-apps-components/accordion" label="Accordion" />
+      </NavItem>
+      <NavItem title="Power Pages Components" open>
+        <NavLink href="/power-pages-components/accordion" label="Accordion" />
+        <NavLink href="/power-pages-components/button" label="Button" />
+        <NavLink href="/power-pages-components/card" label="Card" />
+        <NavLink href="/power-pages-components/carousel" label="Carousel" />
+        <NavLink href="/power-pages-components/gallery" label="Gallery" />
+        <NavLink href="/power-pages-components/jumbotron" label="Jumbotron" />
         <NavSubItem title="Forms" open>
-          <NavLink href="/components/input" label="Floating Labels" />
+          <NavLink
+            href="/power-pages-components/input"
+            label="Floating Labels"
+          />
         </NavSubItem>
-        <NavLink href="/components/modal" label="Modal" />
+        <NavLink href="/power-pages-components/modal" label="Modal" />
       </NavItem>
     </Nav>
   </div>
