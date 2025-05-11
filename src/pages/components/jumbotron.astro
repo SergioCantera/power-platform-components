@@ -2,7 +2,6 @@
 import {
   defaultJumbotron,
   gradientBackgroundJumbotron,
-  importCode,
 } from "@data/jumbotron.ts";
 import DefaultJumbotron from "@components/jumbotrons/DefaultJumbotron.astro";
 import GradientBackgroundJumbotron from "@components/jumbotrons/GradientBackgroundJumbotron.astro";
@@ -51,9 +50,9 @@ import TabItem from "@components/TabItem.astro";
           <Heading level={2} text="Usage" />
           <Heading level={3} text="Default Jumbotron" />
           <Text>
-            The Accordion component consists of an Accordion container and
-            AccordionItem children. The AccordionItem component is used to
-            define each expandable content item within the Accordion container.
+            This UI component features a heading title, a short description, an
+            optional CTA button, background image, gradient or solid background
+            color and it’s generally inside of a card element.
           </Text>
           <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
             <TabItem active>

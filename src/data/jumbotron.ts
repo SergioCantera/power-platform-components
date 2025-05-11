@@ -4,12 +4,12 @@ export const defaultJumbotron = `
     <h1
       class="defaultjumbotron-title"
     >
-      {{ title }}
+      { { title } }
     </h1>
     <p
       class="defaultjumbotron-description"
     >
-      {{ description }}
+      { { description } }
     </p>
     <div
       class="defaultjumbotron-buttons"
@@ -18,7 +18,7 @@ export const defaultJumbotron = `
         href="#"
         class="defaultjumbotron-button-primary"
       >
-        {{ buttonLabel1 }}
+        { { buttonLabel1 } }
         <svg
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@ export const defaultJumbotron = `
         href="#"
         class="defaultjumbotron-button-secondary"
       >
-        {{ buttonLabel2 }}
+        { { buttonLabel2 } }
       </a>
     </div>
   </div>
@@ -60,7 +60,7 @@ justify-content:center}.defaultjumbotron-button-secondary{margin-inline-start:1r
 .defaultjumbotron-description{padding-left:12rem;padding-right:12rem;font-size:1.25rem;line-height:1.75rem;}}
 </style>
 
-{% manifest %} 
+{ % manifest % } 
   { 
     "type": "Functional", 
     "displayName": "DefaultJumbotron", 
@@ -89,21 +89,21 @@ justify-content:center}.defaultjumbotron-button-secondary{margin-inline-start:1r
       }
     ] 
   } 
-{% endmanifest %}
+{ % endmanifest % }
 `
 
 export const gradientBackgroundJumbotron = `
 <section class="gradientjumbotron-section">
   <div class="gradientjumbotron-container">
     <h1 class="gradientjumbotron-title">
-      {{ title }}
+      { { title } }
     </h1>
     <p class="gradientjumbotron-description">
-      {{ description }}
+      { { description } }
     </p>
     <div class="gradientjumbotron-buttons">
       <a href="#" class="gradientjumbotron-button-primary">
-        {{ buttonLabel1 }}
+        { { buttonLabel1 } }
         <svg
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +119,7 @@ export const gradientBackgroundJumbotron = `
         </svg>
       </a>
       <a href="#" class="gradientjumbotron-button-secondary">
-        {{ buttonLabel2 }}
+        { { buttonLabel2 } }
       </a>
     </div>
   </div>
@@ -145,7 +145,7 @@ justify-content:center}.gradientjumbotron-button-secondary{margin-inline-start:1
 .gradientjumbotron-description{padding-left:12rem;padding-right:12rem;font-size:1.25rem;line-height:1.75rem;}}
 </style>
 
-{% manifest %} 
+{ % manifest % } 
   { 
     "type": "Functional", 
     "displayName": "GradientBackgroungJumbotron", 
@@ -174,5 +174,5 @@ justify-content:center}.gradientjumbotron-button-secondary{margin-inline-start:1
       }
     ] 
   } 
-{% endmanifest %} 
+{ % endmanifest % } 
 `

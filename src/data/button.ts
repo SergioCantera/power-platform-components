@@ -2,8 +2,8 @@ export const defaultButton = `
 <button 
   type="button" 
   class="default-button"
-  style="width:{{ width }}px; height:{{ height }}px;"
-  >{{ buttonText }}
+  style="width:{ { width } }px; height:{ { height } }px;"
+  >{ { buttonText } }
   </button>
 <style>
   .default-button{--pp-text-opacity: 1;--pp-bg-opacity: 1;--pp-ring-offset-shadow: 1rem 0 0 0 1px rgb(0 0 0 / 1);
@@ -22,7 +22,7 @@ export const defaultButton = `
   .default-button:hover:is(.dark *){background-color: rgb(26 86 219 / var(--pp-bg-opacity, 1));}
   .default-button:focus:is(.dark *){background-color: rgb(30 66 159 / var(--pp-bg-opacity, 1));}
 </style>
-{% manifest %} 
+{ % manifest % } 
   { 
   "type": "Functional", 
   "displayName": "DefaultButton", 
@@ -46,16 +46,16 @@ export const defaultButton = `
     }
   ] 
   } 
-{% endmanifest %}
+{ % endmanifest % }
 `
 
 export const buttonPill = `
 <button
   type="button"
   class="button-pill"
-  style="width:{{ width }}px; height:{{ height }}px;"
+  style="width:{ { width } }px; height:{ { height } }px;"
   >
-  {{ buttonText }}
+  { { buttonText } }
 </button>
 <style>
   .button-pill{--pp-text-opacity: 1;--pp-bg-opacity: 1;--pp-ring-offset-shadow: 1rem 0 0 0 1px rgb(0 0 0 / 1);--pp-ring-inset: 1rem;
@@ -73,7 +73,7 @@ export const buttonPill = `
   .button-pill:hover:is(.dark *){background-color: rgb(26 86 219 / var(--pp-bg-opacity, 1));}
   .button-pill:focus:is(.dark *){background-color: rgb(30 66 159 / var(--pp-bg-opacity, 1));}
 </style>
-{% manifest %} 
+{ % manifest % } 
   { 
   "type": "Functional", 
   "displayName": "ButtonPill", 
@@ -97,16 +97,16 @@ export const buttonPill = `
     }
   ] 
   } 
-{% endmanifest %}
+{ % endmanifest % }
 `
 
 export const gradientButton = `
 <button
   type="button"
   class="gradient-button"
-  style="width:{{ width }}px; height:{{ height }}px;"
+  style="width:{ { width } }px; height:{ { height } }px;"
   >
-  {{ buttonText }}
+  { { buttonText } }
 </button>
 <style>
   .gradient-button{--pp-text-opacity: 1;--pp-bg-opacity: 1;--pp-ring-offset-shadow: 1rem 0 0 0 1px rgb(0 0 0 / 1);--pp-ring-inset: 1rem;
@@ -125,7 +125,7 @@ export const gradientButton = `
     --pp-ring-opacity: 1;--pp-ring-color: rgb(164 202 254 / var(--pp-ring-opacity, 1))}
   .gradient-button:focus:is(.dark *){--pp-ring-opacity: 1;--pp-ring-color: rgb(30 66 159 / var(--pp-ring-opacity, 1))}
 </style>
-{% manifest %} 
+{ % manifest % } 
   { 
   "type": "Functional", 
   "displayName": "GradientButton", 
@@ -149,7 +149,7 @@ export const gradientButton = `
     }
   ] 
   } 
-{% endmanifest %}
+{ % endmanifest % }
 `
 
 export const buttonWithIcon = `
@@ -168,7 +168,7 @@ export const buttonWithIcon = `
       d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"
     ></path>
   </svg>
-  {{ buttonText }}
+  { { buttonText } }
 </button>
 <style>
   .button-with-icon{--pp-text-opacity: 1;--pp-bg-opacity: 1;--pp-ring-offset-shadow: 1rem 0 0 0 1px rgb(0 0 0 / 1);
@@ -189,7 +189,7 @@ export const buttonWithIcon = `
   .icon-button{width:.875rem;height:.875rem;margin-inline.end:.5rem;}
 </style>
 
-{% manifest %} 
+{ % manifest % } 
   { 
   "type": "Functional", 
   "displayName": "ButtonWithIcon", 
@@ -213,5 +213,5 @@ export const buttonWithIcon = `
     }
   ] 
   } 
-{% endmanifest %}
+{ % endmanifest % }
 `

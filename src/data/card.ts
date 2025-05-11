@@ -1,7 +1,7 @@
 export const defaultCard = `
 <a href="#" class="defaultcard-link">
-  <h5 class="defaultcard-title">{{ title }}</h5>
-  <p class="defaultcard-subtitle">{{ subtitle }}</p>
+  <h5 class="defaultcard-title">{ { title } }</h5>
+  <p class="defaultcard-subtitle">{ { subtitle } }</p>
 </a>
 <style>
 .defaultcard-link{display: block; padding: 1.5rem;border-radius: 0.5rem;border-width: 1px;border-color: #E5E7EB;max-width: 24rem;
@@ -10,7 +10,7 @@ background-color: #F3F4F6; text-decoration: none !important;}.defaultcard-title{
 letter-spacing: -0.025em;color: #111827;}.defaultcard-subtitle{font-weight: 400;color: #374151;}
 </style>
 
-{% manifest %}
+{ % manifest % }
   {
   "type": "Functional",
   "displayName": "DefaultCard",
@@ -29,17 +29,17 @@ letter-spacing: -0.025em;color: #111827;}.defaultcard-subtitle{font-weight: 400;
     }
   ]
   }
-{% endmanifest %} 
+{ % endmanifest % } 
 `
 
 export const cardWithButton = `
 <div class="cardwithbutton-container">
   <a href="#">
-    <h5 class="cardwithbutton-title">{{ title }}</h5>
+    <h5 class="cardwithbutton-title">{ { title } }</h5>
   </a>
-  <p class="cardwithbutton-subtitle">{{ subtitle }}</p>
+  <p class="cardwithbutton-subtitle">{ { subtitle } }</p>
   <a href="#" class="cardwithbutton-button">
-    {{ buttonText }}
+    { { buttonText } }
     <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
     </svg>
@@ -54,7 +54,7 @@ padding-bottom: 0.5rem; padding-left: 0.75rem;padding-right: 0.75rem;align-items
 font-weight: 500;text-align: center;color: #ffffff !important;background-color: #1D4ED8;}.cardwithbutton-button:hover{background-color: #1E40AF;}
 .cardwithbutton-button:focus{box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);outline-style: none;}.cardwithbutton-button svg{width: 0.875rem;height: 0.875rem;margin-left:0.5rem;}
 </style>
-{% manifest %}
+{ % manifest % }
   {
   "type": "Functional",
   "displayName": "CardWithButton",
@@ -78,25 +78,25 @@ font-weight: 500;text-align: center;color: #ffffff !important;background-color: 
     }
   ]
   }
-{% endmanifest %} 
+{ % endmanifest % } 
 `
 
 export const cardWithImage = `
 <div class="cardwithimage-container">
   <a href="#">
-    <img class="cardwithimage-image" src={{ imgUrl }} alt="" />
+    <img class="cardwithimage-image" src={ { imgUrl } } alt="" />
   </a>
   <div class="p-5">
     <a href="#">
       <h5 class="cardwithimage-title">
-        {{ title }}
+        { { title } }
       </h5>
     </a>
     <p class="cardwithimage-subtitle">
-      {{ subtitle }}
+      { { subtitle } }
     </p>
     <a href="#" class="cardwithimage-button">
-      {{ buttonText }}
+      { { buttonText } }
       <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
         fill="none" viewBox="0 0 14 10">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"></path>
@@ -115,7 +115,7 @@ border-radius:0.5rem;font-size:0.875rem;line-height:1.25rem;font-weight:500;text
 .cardwithimage-button svg{width:0.875rem;height:0.875rem;}
 </style>
 
-{% manifest %}
+{ % manifest % }
   {
   "type": "Functional",
   "displayName": "CardWithImage",
@@ -144,5 +144,5 @@ border-radius:0.5rem;font-size:0.875rem;line-height:1.25rem;font-weight:500;text
     }
   ]
   }
-{% endmanifest %} 
+{ % endmanifest % } 
 `

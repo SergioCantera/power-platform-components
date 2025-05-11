@@ -86,12 +86,12 @@ export const defaultGallery = `
   </div>
 </div>
 <style>
-.defaultgallery-container{display:grid;grid-gap:1rem;grid-template-columns:repeat({{smCols}},1fr);}
+.defaultgallery-container{display:grid;grid-gap:1rem;grid-template-columns:repeat({ {smCols} },1fr);}
 .defaultgallery-item{height:auto;max-width:100%;border-radius:.5rem;}
-@media (min-width: 768px) {.defaultgallery-container{grid-template-columns:repeat({{mdCols}},1fr);}}
+@media (min-width: 768px) {.defaultgallery-container{grid-template-columns:repeat({ {mdCols} },1fr);}}
 </style>
 
-{% manifest %} 
+{ % manifest % } 
   { 
     "type": "Functional", 
     "displayName": "DefaultGallery", 
@@ -110,7 +110,7 @@ export const defaultGallery = `
       }
     ] 
   } 
-{% endmanifest %}
+{ % endmanifest % }
 `
 
 export const featuredImageGallery = `
@@ -162,10 +162,10 @@ export const featuredImageGallery = `
 </div>
 <style>
 .featuredgallery-container{display:grid;grid-gap:1rem;}.featuredgallery-item{height:auto;max-width:100%;border-radius:.5rem;}
-.featuredgallery-subcontainer{display:grid;grid-template-columns:repeat({{ cols }},1fr);grid-gap:1rem;}
+.featuredgallery-subcontainer{display:grid;grid-template-columns:repeat({ { cols } },1fr);grid-gap:1rem;}
 </style>
 
-{% manifest %} 
+{ % manifest % } 
   { 
     "type": "Functional", 
     "displayName": "FeaturedImageGallery", 
@@ -179,5 +179,5 @@ export const featuredImageGallery = `
       }
     ] 
   } 
-{% endmanifest %} 
+{ % endmanifest % } 
 `

@@ -1,6 +1,5 @@
 ---
 import Article from "@components/Article.astro";
-import Button from "@components/Button.astro";
 import CodeBlock from "@components/CodeBlock.astro";
 import Content from "@layouts/Content.astro";
 import Header from "@components/Header.astro";
@@ -18,25 +17,34 @@ import Text from "@components/Text.astro";
 import FloatingOutlinedLabel from "@components/inputs/FloatingOutlinedLabel.astro";
 
 const copyCode = `
-<div class="relative">
-  <input type="text" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-100 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
-  <label for="floating_filled" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">{{ textLabel }}</label>
+<div class="floatingfilled-container">
+    <input type="text" id="floating_filled" class="floatingfilled-input" placeholder=" " />
+    <label for="floating_filled" class="floatingfilled-label">{ { textLabel } }</label>
 </div>
+<style>
+.floatingfilled-container{position:relative;}.floatingfilled-input{display:block;padding-left:0.625rem;padding-right:0.625rem;padding-bottom:0.625rem;
+padding-top:1.25rem;border-top-left-radius:0.5rem;border-top-right-radius:0.5rem;border-width:0;border-bottom-width:2px;border-color:#D1D5DB;width:100%;
+font-size:0.875rem;line-height:1.25rem;color:#111827;background-color:#F3F4F6;appearance:none}.floatingfilled-input:focus{outline-style:none;
+box-shadow:var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);border-color: #2563EB;}.floatingfilled-container input:focus{border-radius:0;}
+.floatingfilled-label{position:absolute;top:1rem;z-index:10;left:0.625rem;transition:top 0.3s,font-size 0.3s,transform 0.3s;transform-origin:0;}.floatingfilled-input:focus~.floatingfilled-label,
+.floatingfilled-input:not(:placeholder-shown)~.floatingfilled-label{top:0.75rem;font-size:0.75rem;transform:translateY(-1rem) scale(0.75);}.floatingfilled-input:focus~.floatingfilled-label{color:#2563EB;}
+</style>
 
-{% manifest %} 
+{ % manifest % } 
   { 
-    "type": "Functional", 
-    "displayName": "Floating Filled Label", 
-    "description": "Floating ", 
-    "params": [
-      {
-        "id": "textLabel",
-        "displayName": "Text Label",
-        "description": "Text for label"
-      }
-    ] 
+  "type": "Functional", 
+  "displayName": "Floating Filled Label", 
+  "description": "Floating ",
+  "tables": [], 
+  "params": [
+    {
+      "id": "textLabel",
+      "displayName": "Text Label",
+      "description": "Text for label"
+    }
+  ] 
   } 
-{% endmanifest %}
+{ % endmanifest % }
 `;
 ---
 
@@ -112,7 +120,7 @@ const copyCode = `
               <TabItem>
                 <CodeBlock
                   lang="html"
-                  code="{% include 'FloatingOutlinedLabel' 'textLabel':'First name' %}"
+                  code="{ % include 'FloatingOutlinedLabel' 'textLabel':'First name' % }"
                 />
               </TabItem>
             </Tab>
